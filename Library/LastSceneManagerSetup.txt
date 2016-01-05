@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/GD_FINAL/Scenes/CompleteMainScene.unity
+  isLoaded: 1
+  isActive: 1
