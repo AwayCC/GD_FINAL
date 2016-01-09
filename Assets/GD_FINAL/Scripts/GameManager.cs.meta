@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 5db6798fe79e60445bafecc54ebf2b8f
-timeCreated: 1451986352
+timeCreated: 1452005194
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_Minion_Pink: {fileID: 148602, guid: 2530a20427b66b64788ba964a2152e02, type: 2}
+  - m_Minion_Blue: {fileID: 116922, guid: c431e89151b296e47ae1ceca4913f3a4, type: 2}
+  - m_Minion_Purple: {fileID: 121364, guid: fefaaa6545ec8cc4cae35e206342b813, type: 2}
+  - m_Minion_Brown: {fileID: 160326, guid: aefd7d44768e2fe42a324e9fb25d1f90, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
