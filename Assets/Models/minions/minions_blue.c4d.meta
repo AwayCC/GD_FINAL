@@ -65,6 +65,9 @@ ModelImporter:
     100114: Root_2
     100116: RIGHT_HIP_2
     100118: RIGHT_LEG_2
+    100120: 1_gg001
+    100122: 2_gg001
+    100124: Subdivision_Surface
     400000: _
     400002: __2
     400004: __3
@@ -125,6 +128,9 @@ ModelImporter:
     400114: Root_2
     400116: RIGHT_HIP_2
     400118: RIGHT_LEG_2
+    400120: 1_gg001
+    400122: 2_gg001
+    400124: Subdivision_Surface
     2300000: Cone
     2300002: Cone_2
     2300004: Cone_3
@@ -140,6 +146,8 @@ ModelImporter:
     2300024: Cylinder_3
     2300026: Cylinder_4
     2300028: Cylinder_5
+    2300030: 1_gg001
+    2300032: 2_gg001
     3300000: Cone
     3300002: Cone_2
     3300004: Cone_3
@@ -155,6 +163,8 @@ ModelImporter:
     3300024: Cylinder_3
     3300026: Cylinder_4
     3300028: Cylinder_5
+    3300030: 1_gg001
+    3300032: 2_gg001
     4300000: Cube
     4300002: Cube_2
     4300004: Cylinder
@@ -177,6 +187,8 @@ ModelImporter:
     4300038: Left_ARM
     4300040: Left_LEG
     4300042: Right_LEG
+    4300044: 1_gg001
+    4300046: 2_gg001
     7400000: Main
     9500000: //RootNode
     11100000: //RootNode

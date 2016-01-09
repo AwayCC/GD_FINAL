@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5A0769DA-25DA-A68D-BA58-6ED404CB536B}</ProjectGuid>
+    <ProjectGuid>{17124E6A-C5FD-F4CE-7BD2-F72F82D64A8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,20 +45,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\BloomEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
-     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
-     <Compile Include="Assets\Editor\MoveSceneViewCamera.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\AntialiasingEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\BloomEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\DepthOfFieldEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\EdgeDetectionEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\SunShaftsEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\TonemappingEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+     <Compile Include="Assets\Prefabs\Editor\MoveSceneViewCamera.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
@@ -160,9 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{16CD7B17-7623-4642-698C-543338976F10}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{F33449B2-3C41-57AB-BD74-725DBC2D570F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -127,6 +127,10 @@ public class GameManager : MonoBehaviour {
             group[u].m_group = group;
         }
     }
+    public void UIDebugging()
+    {
+        Debug.Log("The Action is Detected");
+    }
     public void CalMinions()
     {
         int cate = Random.Range(0, 4);

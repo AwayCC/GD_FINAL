@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</ProjectGuid>
+    <ProjectGuid>{F33449B2-3C41-57AB-BD74-725DBC2D570F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -52,13 +52,13 @@
      <Compile Include="Assets\GD_FINAL\Scripts\UserActionManager.cs" />
      <Compile Include="Assets\GD_FINAL\Scripts\UserActionMoving.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\Managers\GameManager_ref.cs" />
      <Compile Include="Assets\Scripts\Managers\TankManager.cs" />
      <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
      <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
      <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
      <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
      <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
+     <Compile Include="Assets\scrip.cs" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
@@ -136,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{16CD7B17-7623-4642-698C-543338976F10}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

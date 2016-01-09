@@ -1,18 +1,41 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public struct CamNavControlPoint
+{
+    public Vector3 Position;
+    public Quaternion Rotation;
+}
 
 public class CameraControl : MonoBehaviour
 {
-    public float m_DampTime = 0.2f;                 
-    public float m_ScreenEdgeBuffer = 4f;           
-    public float m_MinSize = 6.5f;                  
-    [HideInInspector] public Transform[] m_Targets; 
+    public GameObject[] m_Nodes;
+    Vector2 swipeThreshold = new Vector2(0, 0);
+    public Camera m_Camera;
+    private float CurCamIdx = 0;
+    private List<CamNavControlPoint> ControlPoints = new List<CamNavControlPoint>();
+    public GameObject[] m_demoMinions;
 
+    private bool startmoving = false;
+    private float initTime = 0.0f;
+    private const float CamPreBuffer = 0.5f;
+    private const float movingIdx = 0.01f;
+    private bool deleteDemo = false;
 
-    private Camera m_Camera;                        
-    private float m_ZoomSpeed;                      
-    private Vector3 m_MoveVelocity;                 
-    private Vector3 m_DesiredPosition;              
+    public void startCameraMove()
+    {
+        startmoving = true;
+        initTime = Time.frameCount;
+    }
+    void Start()
+    {
+        for(int u = 0; u < m_Nodes.Length; u++)
+        {
+            ControlPoints.Add(new CamNavControlPoint() { Position = m_Nodes[u].transform.position, Rotation = m_Nodes[u].transform.rotation });
+        }
 
+    }
 
     private void Awake()
     {
@@ -22,83 +45,32 @@ public class CameraControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Zoom();
-    }
-
-
-    private void Move()
-    {
-        FindAveragePosition();
-
-        transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
-    }
-
-
-    private void FindAveragePosition()
-    {
-        Vector3 averagePos = new Vector3();
-        int numTargets = 0;
-
-        for (int i = 0; i < m_Targets.Length; i++)
+        //Move();
+        //Zoom();
+        float startingTime = Time.frameCount - initTime;
+        Debug.Log("current CamIdx: " + CurCamIdx.ToString() + ", starting time: " + startingTime + ", init time: " + initTime);
+        if (startmoving == true)
         {
-            if (!m_Targets[i].gameObject.activeSelf)
-                continue;
-
-            averagePos += m_Targets[i].position;
-            numTargets++;
+            if (startingTime > CamPreBuffer)
+                Swipe( movingIdx );
         }
-
-        if (numTargets > 0)
-            averagePos /= numTargets;
-
-        averagePos.y = transform.position.y;
-
-        m_DesiredPosition = averagePos;
     }
-
-
-    private void Zoom()
+    private void Swipe(float swipeVal)
     {
-        float requiredSize = FindRequiredSize();
-        m_Camera.orthographicSize = Mathf.SmoothDamp(m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
-    }
-
-
-    private float FindRequiredSize()
-    {
-        Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
-
-        float size = 0f;
-
-        for (int i = 0; i < m_Targets.Length; i++)
+        if (CurCamIdx < 0.99f)
         {
-            if (!m_Targets[i].gameObject.activeSelf)
-                continue;
-
-            Vector3 targetLocalPos = transform.InverseTransformPoint(m_Targets[i].position);
-
-            Vector3 desiredPosToTarget = targetLocalPos - desiredLocalPos;
-
-            size = Mathf.Max (size, Mathf.Abs (desiredPosToTarget.y));
-
-            size = Mathf.Max (size, Mathf.Abs (desiredPosToTarget.x) / m_Camera.aspect);
+            if(CurCamIdx>=0.5f && !deleteDemo)
+            {
+                for (int u = 0; u < m_demoMinions.Length; u++)
+                    Destroy(m_demoMinions[u]);
+                deleteDemo = true;
+            }
+            CurCamIdx += swipeVal;
+            int floored = Mathf.FloorToInt(CurCamIdx);
+            int ceilinged = Mathf.CeilToInt(CurCamIdx);
+            m_Camera.transform.position = Vector3.Lerp(ControlPoints[floored].Position, ControlPoints[ceilinged].Position, CurCamIdx - floored);
+            m_Camera.transform.rotation = Quaternion.Lerp(ControlPoints[floored].Rotation, ControlPoints[ceilinged].Rotation, CurCamIdx);
         }
-        
-        size += m_ScreenEdgeBuffer;
-
-        size = Mathf.Max(size, m_MinSize);
-
-        return size;
     }
-
-
-    public void SetStartPositionAndSize()
-    {
-        FindAveragePosition();
-
-        transform.position = m_DesiredPosition;
-
-        m_Camera.orthographicSize = FindRequiredSize();
-    }
+    
 }
